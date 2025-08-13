@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo " enter you pin no :: "
+
+read -s PIN # here PIN is variable and -s is for the no we type it ll not show in page
+
+echo " your number is : $PIN "
+
