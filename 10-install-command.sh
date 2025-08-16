@@ -11,15 +11,22 @@ else
 
 fi
 
-dnf install mysql -y
+# checking before installing mysql, was installed or not
+dnf list installed mysql
 
-if [ $? -eq 0 ]  # the exit code represents always sucess
+if [ $? -ne 0 ]
 then
-    echo "Installing MYSQL is Sucessfull...."
-
+    echo "MySQL IS not installed Yet, no MySQL going to install"
+    dnf install mysql -y
+    if [ $? -eq 0 ]  # the exit code represents always sucess
+    then
+        echo "Installing MYSQL is Sucessfull...."
+    else
+        echo "Installing MYSQL is failure...."
+        exit 1 # when ever the failure is there in shell script, then we should automatically give exit than zero, mainly 1
 else
-    echo "Installing MYSQL is failure...."
-    exit 1 # when ever the failure is there in shell script, then we should automatically give exit than zero, mainly 1
+    echo "MySQL is already installed, no need to install again"
+
 
 fi
 
