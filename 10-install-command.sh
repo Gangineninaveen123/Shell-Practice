@@ -24,6 +24,7 @@ then
     else
         echo "Installing MYSQL is failure...."
         exit 1 # when ever the failure is there in shell script, then we should automatically give exit than zero, mainly 1
+    fi
 else
     echo "MySQL is already installed, no need to install again"
 
