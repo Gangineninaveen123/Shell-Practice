@@ -49,14 +49,12 @@ else
 
 fi
 
-
-
 dnf list installed nginx
 
 if [ $? -ne 0 ]
 then
-    echo "nginx IS not installed Yet, now nginx going to install"
-    dnf install python3 -y
+    echo "nginx IS not installed Yet, no MySQL going to install"
+    dnf install nginx -y
     VALIDATE $? "nginx"
 else
     echo "nginx is already installed, no need to install again"
