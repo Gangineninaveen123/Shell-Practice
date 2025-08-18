@@ -49,7 +49,7 @@ else
 
 fi
 
-#installing nginx
+
 
 dnf list installed nginx
 
