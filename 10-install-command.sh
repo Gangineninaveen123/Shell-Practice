@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERID=$( id -u)
+USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
 then
@@ -13,7 +13,8 @@ fi
 
 # checking before installing mysql, was installed or not
 dnf list installed mysql
-
+# check mysql already installed or not, if installed $? is 0, then else block will execute
+#if not installed, #?-> [Exit status] is not 0, so if block will execute
 if [ $? -ne 0 ]
 then
     echo "MySQL IS not installed Yet, no MySQL going to install"
