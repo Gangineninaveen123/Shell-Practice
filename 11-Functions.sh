@@ -1,9 +1,16 @@
 #!/bin/bash
 USERID=$(id -u)
 
+# Creating Variables for Colours
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
+
 if [ $USERID -ne 0 ]
 then
-    echo "ERROR:: Please run the shell script with root user"
+    echo -e " $R ERROR:: Please run the shell script with root user $N" # here $R which starts colour as Red, and at ending $N ll make it as Normal.
     exit 1 # give other than zero[1-127] as exit code, so it ll not move forward from this step.
 else
     echo "You are running with root user"
@@ -16,9 +23,9 @@ VALIDATE()
 {
      if [ $1 -eq 0 ]  # the exit code represents always sucess
     then
-        echo "Installing $2 is Sucessfull...."
+        echo -e " Installing $2 is $G  Sucessfull.... $N"
     else
-        echo "Installing $2 is failure...."
+        echo -e "Installing $2 $R  is failure.... $N"
         exit 1 # when ever the failure is there in shell script, then we should automatically give exit than zero, mainly 1
     fi
 }
@@ -31,7 +38,7 @@ then
     dnf install mysql -y
     VALIDATE $? "MySQL"
 else
-    echo "MySQL is already installed, no need to install again"
+    echo -e " $Y MySQL is already installed, no need to install again $N"
 
 
 fi
@@ -46,10 +53,11 @@ then
     dnf install python3 -y
     VALIDATE $? "Python3"
 else
-    echo "Python3 is already installed, no need to install again"
+    echo "$Y Python3 is already installed, no need to install again $N"
 
 
 fi
+# Installing Nginx
 
 dnf list installed nginx
 
@@ -59,7 +67,7 @@ then
     dnf install nginx -y
     VALIDATE $? "nginx"
 else
-    echo "nginx is already installed, no need to install again"
+    echo "$Y nginx is already installed, no need to install again $N"
 
 
 fi
