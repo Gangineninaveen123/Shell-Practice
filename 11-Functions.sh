@@ -10,6 +10,8 @@ else
 
 fi
 
+#, here $1 -> means takes exit code $? as input $2 argument, which is given in the code, while calliong function
+
 VALIDATE()
 {
      if [ $1 -eq 0 ]  # the exit code represents always sucess
