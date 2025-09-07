@@ -15,7 +15,7 @@ Y="\e[33m"
 N="\e[0m"
 
 # Creatring Logs folder variable , where logs ll be saved
-LOGS_FOLDER="var/log/shellscript-logs"
+LOGS_FOLDER="/var/log/shellscript-logs"
 # not to have two end endpoints extension, so removing .sh for our convienince
 SCRIPT_NAME=$(echo $0 | awk -F "." '{print $1F}')
 # Creating Log file ending with .log ectenstion, ex: var/log/shellscript-logs/13-logs.log
