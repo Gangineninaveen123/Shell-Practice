@@ -5,7 +5,7 @@ echo -e "\e[31m HelloWorld red colour \e[0m" | tee
 echo "Helloworld no colour"
 
 
-#!/bin/bash
+
 USERID=$(id -u)
 
 # Creating Variables for Colours
