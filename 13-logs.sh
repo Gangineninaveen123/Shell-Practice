@@ -52,12 +52,12 @@ VALIDATE()
     fi
 }
 
-dnf list installed mysql | tee -a $LOG_FILE
+dnf list installed mysql &>> $LOG_FILE
 
 if [ $? -ne 0 ]
 then
     echo "MySQL IS not installed Yet, no MySQL going to install" | tee -a $LOG_FILE
-    dnf install mysql -y | tee -a $LOG_FILE
+    dnf install mysql -y &>> $LOG_FILE
     VALIDATE $? "MySQL"
 else
     echo -e " $Y MySQL is already installed, no need to install again $N" | tee -a $LOG_FILE
@@ -67,12 +67,12 @@ fi
 
 #INSTALLING PYTRHON3
 
-dnf list installed python3 | tee -a $LOG_FILE
+dnf list installed python3 &>> $LOG_FILE
 
 if [ $? -ne 0 ]
 then
     echo " python3 IS not installed Yet, now python3 going to install"| tee -a $LOG_FILE
-    dnf install python3 -y | tee -a $LOG_FILE
+    dnf install python3 -y &>> $LOG_FILE
     VALIDATE $? "Python3"
 else
     echo -e "$Y Python3 is already installed, no need to install again $N" | tee -a $LOG_FILE
@@ -81,12 +81,12 @@ else
 fi
 # Installing Nginx
 
-dnf list installed nginx | tee -a $LOG_FILE
+dnf list installed nginx &>> $LOG_FILE
 
 if [ $? -ne 0 ]
 then
     echo "nginx IS not installed Yet, no nginx going to install" | tee -a $LOG_FILE
-    dnf install nginx -y | tee -a $LOG_FILE
+    dnf install nginx -y &>> $LOG_FILE
     VALIDATE $? "nginx"
 else
     echo -e "$Y nginx is already installed, no need to install again $N" | tee -a $LOG_FILE
