@@ -56,7 +56,9 @@ VALIDATE()
 }
 
 #using for loop to install all the packages 👌
-for package in ${PACKAGES[@]}
+# for package in ${PACKAGES[@]} # giving as array manually
+
+for package in $@  # to give arguments randomly on screen
 do
     dnf list installed $package &>> $LOG_FILE
     if [ $? -ne 0 ]
