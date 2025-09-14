@@ -2,3 +2,5 @@
 GREETINGS="HELLO I AM GOOD, HOW ARE YOU?"
 echo "$GREETINGS"
 echo "PID of script: $$"
+
+./script2.sh
