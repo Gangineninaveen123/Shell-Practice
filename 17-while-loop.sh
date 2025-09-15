@@ -1,10 +1,15 @@
-#!/bin/bash
+# #!/bin/bash
 
-a=0
+# a=0
 
-while [ $a -lt 10 ]
-do
-    echo $a
-    a=`expr $a + 1`
-done
+# while [ $a -lt 10 ]
+# do
+#     echo $a
+#     a=`expr $a + 1`
+# done
+ 
+ while IFS = read -r line  # IFS -> INTERNAL FIELD SEPERATOR AND $LINE MEANS LINE BY LINE IT READS
+ do
+    echo $line
 
+ done < 15-loops.sh  # TAKING FILE AS INPUT
