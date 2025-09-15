@@ -8,7 +8,7 @@
 #     a=`expr $a + 1`
 # done
  
- while IFS=read -r line  # IFS -> INTERNAL FIELD SEPERATOR AND $LINE MEANS LINE BY LINE IT READS
+ while IFS= read -r line  # IFS -> INTERNAL FIELD SEPERATOR AND $LINE MEANS LINE BY LINE IT READS
  do
     echo $line
 
