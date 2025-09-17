@@ -99,3 +99,4 @@ then
     echo "FILES found older than 14 days and zipping them :: $FILES"
 else
     echo -e "NO log files found older than 14 days .... $Y Skipping.. $N"
+fi
