@@ -109,7 +109,7 @@ else
 fi
 
 #checking the zip file is created or not
-if [ -d $ZIP_FILE ]
+if [ -f $ZIP_FILE ]
 then
     echo -e " $G Sucessfully Created zip file $N "
     #while loop for delting log files
