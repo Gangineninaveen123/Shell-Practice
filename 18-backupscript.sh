@@ -4,7 +4,7 @@ SOURCE_DIR=$1
 #Creating destination dir
 DEST_DIR=$2
 #NO_OF_DAYS=${3:-14} means: Take the 3rd argument if provided, otherwise default to 14., if days are given, it ll consider..., by default 14 days
-NO_OF_DAYS=${3:-14}
+DAYS=${3:-14}
 
 
 #start time
@@ -86,17 +86,17 @@ fi
 # else
 #     echo "❌ One or both files are missing"
 #     exit 1   # Exit the whole script, not just the function
-# fi
+# 
 #*****************
 
 #fineding file to spe3cific dates
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$NO_OF_DAYS)
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 #Thinks file is empty, tthen below command need to use
 # Using -z (string length is zero)
-if [ ! -z $FILES ]
+if [ -z $FILES ]
 then
-    echo -e "FILES found older than 14 days and zipping them: $FILES"
-else
     echo -e "NO log files found older than 14 days .... $Y Skipping.. $N"
+else
+    echo "Files to Zip are: $FILES"
 fi
