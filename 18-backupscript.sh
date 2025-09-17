@@ -67,3 +67,14 @@ then
     USAGE
 fi
 
+#checking mainly souce and folder are there not
+if [ ! -d $SOURCE_DIR ] # -d means directory
+then
+    echo -e "$R $SOURCE_DIR does not exit. Please check... $N"
+fi
+
+#checking mainly destination and folder are there not
+if [ ! -d $DEST_DIR ] # -d means directory
+then
+    echo -e "$R $DEST_DIR does not exit. Please check... $N"
+fi
