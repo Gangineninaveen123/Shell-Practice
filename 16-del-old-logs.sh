@@ -64,7 +64,7 @@ FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mdate +14)
 while IFS= read -r line
 do
     echo "Deleting files:: $line" | tee -a $LOG_FILE
-    rm -rf $FILES_TO_DELETE
+    rm -rf $line
 done <<< $FILES_TO_DELETE  #<<<-> MEANS taking output from mobax terminal or any terminal directory
 
 #****************************] THIS IS ENOUGH FOR INTERVIEW
