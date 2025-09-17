@@ -44,6 +44,7 @@ check_root(){
     fi
 }
 check_root
+
 #, here $1 -> means takes exit code $? as input $2 argument, which is given in the code, while calliong function
 
 VALIDATE()
@@ -92,8 +93,7 @@ fi
 #fineding file to spe3cific dates
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
-#Thinks file is empty, tthen below command need to use
-# Using -z (string length is zero)
+#Thinks file is empty, tthen below command need to use, and here Using -z  means(string length is zero)
 if [ -z $FILES ]
 then
     echo -e "NO log files found older than 14 days .... $Y Skipping.. $N"
