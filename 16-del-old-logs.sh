@@ -69,6 +69,5 @@ done <<< $FILES_TO_DELETE  #<<<-> MEANS taking output from mobax terminal or any
 
 #****************************] THIS IS ENOUGH FOR INTERVIEW
 
-echo "script executed:: $G sucessfully..  $N "
-#End Time
-print_time
+echo " script executed:: $G sucessfully..  $N "
+
