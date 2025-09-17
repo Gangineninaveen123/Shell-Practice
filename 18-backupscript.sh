@@ -88,3 +88,14 @@ fi
 #     exit 1   # Exit the whole script, not just the function
 # fi
 #*****************
+
+#fineding file to spe3cific dates
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$NO_OF_DAYS)
+
+#Thinks file is empty, tthen below command need to use
+# Using -z (string length is zero)
+if [ ! -z $FILES ]
+then
+    echo "FILES found older than 14 days and zipping them :: $FILES"
+else
+    echo -e "NO log files found older than 14 days .... $Y Skipping.. $N"
