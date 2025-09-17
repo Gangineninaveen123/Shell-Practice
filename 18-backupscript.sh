@@ -107,3 +107,22 @@ else
     #ziping command for all the files and saving it in DEST_DIR 
     echo $FILES | zip -@ $ZIP_FILE
 fi
+
+#checking the zip file is created or not
+if [ -d $ZIP_FILE ]
+then
+    echo -e " $G Sucessfully Created zip file $N "
+    #while loop for delting log files
+    while IFS= read -r line
+    do
+        echo "Deleting files:: $line" | tee -a $LOG_FILE
+        rm -rf $line
+    done <<< $FILES  #<<<-> MEANS taking output from mobax terminal or any terminal directory
+    echo -e "Log file which are present in the source directory more than $DAYS is deleted...... $G SUCESSSFUL $N"
+else
+    echo -e "Zip file not created ... $R Failure $N"
+    exit 1
+fi
+
+#Now after taking backup, deleting the files in source folder which having more than 14 days log files data
+
