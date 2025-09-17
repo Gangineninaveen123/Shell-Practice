@@ -94,6 +94,7 @@ fi
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 #Thinks file is empty, tthen below command need to use, and here Using -z  means(string length is zero)
+
 if [ -z $FILES ]
 then
     echo -e "NO log files found older than 14 days .... $Y Skipping.. $N"
