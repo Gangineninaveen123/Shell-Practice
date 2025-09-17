@@ -43,7 +43,7 @@ check_root(){
 
     fi
 }
-
+check_root
 #, here $1 -> means takes exit code $? as input $2 argument, which is given in the code, while calliong function
 
 VALIDATE()
