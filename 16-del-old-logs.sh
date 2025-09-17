@@ -69,8 +69,9 @@ done <<< $FILES_TO_DELETE  #<<<-> MEANS taking output from mobax terminal or any
 
 #****************************] THIS IS ENOUGH FOR INTERVIEW
 
-echo " script executed:: $G sucessfully..  $N"
-
+echo -e " script executed:: $G sucessfully..  $N "
+#method 2 -> this one we can access everything from script2 from script one only ex: content
+source ./commoncode.sh 
 #end time
 print_time
 
