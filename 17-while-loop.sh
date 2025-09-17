@@ -8,6 +8,7 @@
 #     a=`expr $a + 1`
 # done
  
+ #Taking the files line by line.....
  while IFS= read -r line  # IFS -> INTERNAL FIELD SEPERATOR AND $LINE MEANS LINE BY LINE IT READS
  do
     echo $line
