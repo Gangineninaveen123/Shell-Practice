@@ -67,22 +67,24 @@ then
     USAGE
 fi
 
-# #checking mainly souce and folder are there not
-# if [ ! -d $SOURCE_DIR ] # -d means directory
-# then
-#     echo -e "$R source directory :: $SOURCE_DIR does not exit. Please check... $N"
-# fi
-
-# #checking mainly destination and folder are there not
-# if [ ! -d $DEST_DIR ] # -d means directory
-# then
-#     echo -e "$R destination directory :: $DEST_DIR does not exit. Please check... $N"
-# fi
-
- if [ -d $SOURCE_DIR && -d $DEST_DIR ]
- then
-    echo "✅ Both files exist: $SOURCE_DIR and $DEST_DIR"
-else
-    echo "❌ One or both files are missing"
-    exit 1   # Exit the whole script, not just the function
+#checking mainly souce and folder are there not
+if [ ! -d $SOURCE_DIR ] # -d means directory
+then
+    echo -e "$R source directory :: $SOURCE_DIR does not exit. Please check... $N"
 fi
+
+#checking mainly destination and folder are there not
+if [ ! -d $DEST_DIR ] # -d means directory
+then
+    echo -e "$R destination directory :: $DEST_DIR does not exit. Please check... $N"
+fi
+
+#My own code tried *****
+#  if [ -d $SOURCE_DIR && -d $DEST_DIR ]
+#  then
+#     echo "✅ Both files exist: $SOURCE_DIR and $DEST_DIR"
+# else
+#     echo "❌ One or both files are missing"
+#     exit 1   # Exit the whole script, not just the function
+# fi
+#*****************
