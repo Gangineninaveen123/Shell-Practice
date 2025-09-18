@@ -27,22 +27,25 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 #Creating absolute path, so we can access the app in any location with out any error, for ex: /app-> from this location also i can acces caatalogue code i app tier
 SCRIPT_DIR=$PWD
 
-# creating LOGS_FOLDER so, we can store our logs in it. [-p -> means, if same folder already created also it wont give error]
-mkdir -p $LOGS_FOLDER
+
 # script starting date and time, so easy like like which script executes at what time and need to store in LOG_FILE
 echo "Script started and executed at: $(date)" | tee -a $LOG_FILE
 
 # Checking user has root previlages to run or not
-
+check_root(){
     if [ $USERID -ne 0 ]
     then
-        echo -e " $R ERROR:: Please run the shell script with root user $N"  # here $R which starts colour as Red, and at ending $N ll make it as Normal.
-        exit 1 # give other than zero[1-127] as exit code, so it ll not move forward from this step.
+        echo -e " $R ERROR:: Please run the shell script with root user $N"  
+        exit 1 
     else
         echo "You are running with root user"
 
     fi
+}
+check_root
 
+# creating LOGS_FOLDER so, we can store our logs in it. [-p -> means, if same folder already created also it wont give error]
+mkdir -p $LOGS_FOLDER
 
 #, here $1 -> means takes exit code $? as input $2 argument, which is given in the code, while calliong function
 
