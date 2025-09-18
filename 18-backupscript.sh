@@ -36,10 +36,10 @@ echo "Script started and executed at: $(date)" | tee -a $LOG_FILE
 check_root(){
     if [ $USERID -ne 0 ]
     then
-        echo -e " $R ERROR:: Please run the shell script with root user $N" | tee -a $LOG_FILE # here $R which starts colour as Red, and at ending $N ll make it as Normal.
+        echo -e " $R ERROR:: Please run the shell script with root user $N"  # here $R which starts colour as Red, and at ending $N ll make it as Normal.
         exit 1 # give other than zero[1-127] as exit code, so it ll not move forward from this step.
     else
-        echo "You are running with root user" | tee -a $LOG_FILE
+        echo "You are running with root user"
 
     fi
 }
