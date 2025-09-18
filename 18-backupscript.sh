@@ -33,7 +33,7 @@ mkdir -p $LOGS_FOLDER
 echo "Script started and executed at: $(date)" | tee -a $LOG_FILE
 
 # Checking user has root previlages to run or not
-check_root(){
+
     if [ $USERID -ne 0 ]
     then
         echo -e " $R ERROR:: Please run the shell script with root user $N"  # here $R which starts colour as Red, and at ending $N ll make it as Normal.
@@ -42,8 +42,7 @@ check_root(){
         echo "You are running with root user"
 
     fi
-}
-check_root
+
 
 #, here $1 -> means takes exit code $? as input $2 argument, which is given in the code, while calliong function
 
