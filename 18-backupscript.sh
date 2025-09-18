@@ -105,7 +105,7 @@ else
     #zip file making
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip" 
     #ziping command for all the files and saving it in DEST_DIR 
-    echo $FILES | zip -@ $ZIP_FILE
+    echo $FILES | zip -@ "$ZIP_FILE"
 fi
 
 #checking the zip file is created or not
