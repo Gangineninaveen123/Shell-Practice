@@ -23,7 +23,7 @@ LOGS_FOLDER="/var/log/shellscript-logs"
 # not to have two end endpoints extension, so removing .sh for our convienince
 SCRIPT_NAME=$(echo $0 | awk -F "." '{print $1F}')
 # Creating Log file ending with .log ectenstion, ex: var/log/roboshop-logs/13-logs.log
-LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
+LOG_FILE="$LOGS_FOLDER/backup.log"
 #Creating absolute path, so we can access the app in any location with out any error, for ex: /app-> from this location also i can acces caatalogue code i app tier
 SCRIPT_DIR=$PWD
 
