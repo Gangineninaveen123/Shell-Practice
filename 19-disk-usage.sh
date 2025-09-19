@@ -4,7 +4,7 @@
 DISK_USGAE=$(df -hT | grep -v Use%)
 
 #tHRESHOLD VALUE
-DISH_THRESHOLD=1 #In Project it ll be 75 
+DISK_THRESHOLD=1 #In Project it ll be 75 
 
 #message needd to send for mail
 MSG=""
@@ -28,7 +28,7 @@ do
     #Printing like ex: 0::/usr/bin [space in each location]
     # echo "$PARTITION:: $USAGE"
 
-    if [ $USAGE -gt $DISH_THRESHOLD ]
+    if [ $USAGE -gt $DISK_THRESHOLD ]
     then
         # adding or apending MSG, when contion got true, with new line in the end
         MSG+="High disk uage on :- $PARTITION:: $USAGE \n"
