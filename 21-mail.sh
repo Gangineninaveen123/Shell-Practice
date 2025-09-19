@@ -8,7 +8,7 @@ ALERT_TYPE=$2
 IP_ADDRESS=$3
 #MSG  for the mail
 MSG=$4
-FINAL_MSG=$(printf "%s\n" "$MSG" | sed -e "s/[]\/$*.^[]/\\&/g") #any special characters comes example [].] meansit ll replace with [.\]
+FINAL_MSG=$(printf '%s\n' "$MSG" | sed -e 's/[]\/$*.^[]/\\&/g') #any special characters comes example [].] meansit ll replace with [.\]
 
 #To Address
 TO_ADDRESS=$5
