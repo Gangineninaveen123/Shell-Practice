@@ -27,11 +27,12 @@ do
 
     if [ $USAGE -gt $DISH_THRESHOLD ]
     then
-        MSG="High disk uage on :- $PARTITION:: $USAGE"
+        # adding or apending MSG, when contion got true, with new line in the end
+        MSG+="High disk uage on :- $PARTITION:: $USAGE \n"
         
     fi
 
 done <<< $DISK_USGAE
 
 #printing MSG ON Console
-echo $MSG
+echo -e $MSG
