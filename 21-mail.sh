@@ -14,7 +14,7 @@ FINAL_MSG=$(printf "%s\n" "$MSG" | sed -e "s/[]\/$*.^[]/\\&/g") #any special cha
 TO_ADDRESS=$5
 
 #FINAL BODY OF GMAIL
-FINAL_BODY=$(sed -e "s/TO_TEAM/$TO_TEAM/g" -e "s/ALERT_TYPE/$ALERT_TYPE/g" -e "s/IP_ADDRESS/$IP_ADDRESS/g" -e "s/MSG/$MSG/g" 20-mail-templete.html)
+FINAL_BODY=$(sed -e "s/TO_TEAM/$TO_TEAM/g" -e "s/ALERT_TYPE/$ALERT_TYPE/g" -e "s/IP_ADDRESS/$IP_ADDRESS/g" -e "s/MSG/$FINAL_MSG/g" 20-mail-templete.html)
 #SUBJECT
 SUBJECT=$6
 # email sendinding disk usage another email info
