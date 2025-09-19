@@ -40,4 +40,4 @@ done <<< $DISK_USGAE
 #printing MSG ON Console
 #echo -e $MSG
 
-sh 21-mail.sh "DevOps Team" "High Disk Usage" $IP $MSG "gangineninaven132@gmail.com" "ALERT-High Disk Usage"
+sh 21-mail.sh "DevOps Team" "High Disk Usage" "$IP" "$MSG" "gangineninaven132@gmail.com" "ALERT-High Disk Usage"
