@@ -9,6 +9,9 @@ DISH_THRESHOLD=1 #In Project it ll be 75
 #message needd to send for mail
 MSG=""
 
+#IP ADDDRESS OF THE SERVER, LL Get in online just search
+IP=$(curl http://169.254.169.254/latest/meta-data/public-ipv4)
+
 # Reading line by line, which is executed in server, that one in done ll get, which those lines we are making itas code in do
 while IFS= read line
 do
@@ -35,4 +38,6 @@ do
 done <<< $DISK_USGAE
 
 #printing MSG ON Console
-echo -e $MSG
+#echo -e $MSG
+
+sh 21-mail.sh "DevOps Team" "High Disk Usage" $IP $MSG "gangineninaven132@gmail.com" "ALERT-High Disk Usage"
