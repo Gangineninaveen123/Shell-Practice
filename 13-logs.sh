@@ -40,7 +40,7 @@ else
 fi
 
 #, here $1 -> means takes exit code $? as input $2 argument, which is given in the code, while calliong function
-
+# here actual execution not started for VALIDADATE(), from down side, it ll take values, when this function called, then only, it comes in frame, thats it.
 VALIDATE()
 {
      if [ $1 -eq 0 ]  # the exit code represents always sucess
