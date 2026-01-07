@@ -51,7 +51,7 @@ VALIDATE()
         exit 1 # when ever the failure is there in shell script, then we should automatically give exit than zero, mainly 1
     fi
 }
-
+# &>>, so this means both success, and failure deitals ll be looged in to the $LOG_FILE
 dnf list installed mysql &>> $LOG_FILE
 
 if [ $? -ne 0 ]
