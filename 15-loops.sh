@@ -56,9 +56,9 @@ VALIDATE()
 }
 
 #using for loop to install all the packages 👌
-# for package in ${PACKAGES[@]} # giving as array manually
+# for package in ${PACKAGES[@]} # giving as array manually , not using ow in code....
 
-for package in $@  # to give arguments randomly on screen
+for package in $@  # to give arguments randomly on screen , while execution, like -> [sh 15-loops.sh mysql httpd] , so this $@ -> mysql httpd[at execution time, we are giving]
 do
     dnf list installed $package &>> $LOG_FILE
     if [ $? -ne 0 ]
